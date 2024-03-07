@@ -1,0 +1,105 @@
+/* static/styles.css */
+
+body {
+    background-image: url('https://playliststreams.com/wp-content/uploads/2020/04/abstract-spotify-desktop-wallpaper-62370-64314-hd-wallpapers.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+    pointer-events: none; /* Allow mouse events to pass through */
+    z-index: -1; /* Place the overlay below other elements */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1db954;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1aa34a;
+}
+
+.artwork-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+    height: 200px; /* Set a fixed height for the container */
+}
+
+.artwork-container img {
+    max-width: 100%;
+    max-height: 100%; /* Make the image fill the container */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.similar-artists {
+    margin-top: 20px;
+}
+
+.similar-artists h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.similar-artists ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.similar-artists li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+

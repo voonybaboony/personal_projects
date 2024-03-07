@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artist Recommendation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Add a link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="text-center">Music Recommendation</h1>
+        <form action="/playback" method="post">
+            <div class="form-group">
+                <label for="name">Artist Name:</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Start Playback</button>
+        </form>
+
+        <form action="/stop" method="post">
+            <button type="submit" class="btn btn-danger">Stop Playback</button>
+        </form>
+
+        <form action="/resume" method="post">
+            <button type="submit" class="btn btn-success">Resume Playback</button>
+        </form>
+
+        {% if message %}
+        <p class="mt-3">{{ message }}</p>
+        {% endif %}
+
+        {% if current_artist and current_track %}
+        <div class="track-info">
+            <h5 style="text-align:center">{{ current_track }} by {{ current_artist }}</h5>
+        </div>
+        {% endif %}
+
+        {% if artwork_url %}
+        <div class="artwork-container">
+            <img src="{{ artwork_url }}" alt="Artwork">
+        </div>
+        {% endif %}
+
+        {% if similar_artists %}
+        <div class="similar-artists">
+            <h2>Similar Artists:</h2>
+            <ul>
+                {% for artist in similar_artists %}
+                <li style="text-align:center">{{ artist }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
